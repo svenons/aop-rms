@@ -19,10 +19,20 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
-    - name: Restore dependencies
+        dotnet-version: 8.0.x
+        
+    - name: Restore dependencies (Program)
+      working-directory: RecipeManager
       run: dotnet restore
+
     - name: Build
+      working-directory: RecipeManager
       run: dotnet build --no-restore
+
+    - name: Restore dependencies (Tests)
+      working-directory: RecipeManager.Tests
+      run: dotnet restore
+      
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      working-directory: RecipeManager.Tests
+      run: dotnet test --verbosity normal
