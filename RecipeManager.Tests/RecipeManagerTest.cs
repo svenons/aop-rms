@@ -47,7 +47,9 @@ namespace RecipeManager.Tests {
         [Fact]
         public void UpdateRecipe_UpdatesRecipeInManager()
         {
-            Recipe _oldRecipe = _recipe;
+            Recipe _oldRecipe = new Recipe("old name", "old description", _ingredients, _instructions, Categories.Breakfast);
+            _recipeManager.AddRecipe(_oldRecipe);
+            _recipe.Id = _oldRecipe.Id;
             _recipe.Name = "new name";
             _recipeManager.UpdateRecipe(_oldRecipe, _recipe);
 
@@ -60,6 +62,7 @@ namespace RecipeManager.Tests {
         [Fact]
         public void CategoriseRecipe_CategorisesRecipeCorrectly()
         {
+            _recipeManager.AddRecipe(_recipe);
             _recipeManager.CategoriseRecipe(_recipe, Categories.Dinner);
 
             var recipes = _recipeManager.GetRecipes();
@@ -74,9 +77,10 @@ namespace RecipeManager.Tests {
             _recipeManager.AddRecipe(_recipe);
             _recipeManager.SaveRecipes(_recipeManager.GetRecipes());
 
-            var loadedRecipes = _recipeManager.LoadRecipes();
+            RecipeManager _newManager = new RecipeManager();
+            var _newRecipesList = _newManager.LoadRecipes();
 
-            Assert.Contains(_recipe, loadedRecipes);
+            Assert.Equal(_recipe.Id, _newRecipesList.Last().Id);
         }
     }
 }
