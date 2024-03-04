@@ -2,24 +2,24 @@ namespace RecipeManager
 {
     public interface IRecipe
     {
-        public static void AddRecipe(Recipe recipe)
+        public void AddRecipe(Recipe recipe)
         {
             // Add recipe to list
         }
-        public static void RemoveRecipe(Recipe recipe)
+        public void RemoveRecipe(Recipe recipe)
         {
             // Remove recipe from list
         }
-        public static List<Recipe> GetRecipes()
+        public List<Recipe> GetRecipes()
         {
             // Return list of recipes
             return new List<Recipe>();
         }
-        public static void UpdateRecipe(Recipe oldRecipe, Recipe newRecipe)
+        public void UpdateRecipe(Recipe oldRecipe, Recipe newRecipe)
         {
             // Update recipe in list
         }
-        public static void CategoriseRecipe(Recipe recipe, Categories category)
+        public void CategoriseRecipe(Recipe recipe, Categories category)
         {
             // Categorise recipe
         }
@@ -28,7 +28,7 @@ namespace RecipeManager
             // Load recipes from database using IRecipeStorage
             return new List<Recipe>();
         }
-        public static void SaveRecipes()
+        public void SaveRecipes()
         {
             // Save recipes to database using IRecipeStorage
         }
