@@ -61,5 +61,6 @@ Develop a console application that allows users to manage their cooking recipes.
 - [@svenons](https://github.com/svenons/)
 
 ## Acknowledgements
+- Originally started at [Nicki419 - RecipeManager](https://github.com/nicki419/RecipeManager)
 - This exercise is part of Advanced Object-Oriented Programming on [Software Engineering at SDU](https://mitsdu.dk/en/mit_studie/bachelor/softwareengineering_bachelor_soenderborg).
 - Created by [Maximus D. Kaos](https://github.com/MaxDKaos/) and [Maximilian von Zastrow](https://github.com/vzastrow).
