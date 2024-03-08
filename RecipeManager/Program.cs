@@ -5,7 +5,8 @@
         public static void Main()
         {
             // Initialise UI
-            MainMenu mainMenu = new MainMenu();
+            TextInterface _interface = new TextInterface();
+            _interface.MainMenu();
         }
     }
 }
