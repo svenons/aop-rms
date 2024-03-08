@@ -381,6 +381,6 @@ namespace RecipeManager
 
             Recipe removeRecipe = recipes[choice];
             recipeManager.RemoveRecipe(removeRecipe);
-            +
+        }
     }
 }
